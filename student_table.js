@@ -110,6 +110,7 @@
               dateFormat: "yy-mm-dd"
                     });
                       });
+//function for edit the added row
              function edit(index){
                 replaceindex= index
                 var fname = $("#Fname"+index).html();
