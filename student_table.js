@@ -89,9 +89,10 @@
                  $("#tableid").append(stringBuilder);
              }
              function removeElemet(index){
+                 $("#tr"+index).remove();
 
-              var divid = document.getElementById('tr'+index);
-              divid.outerHTML = "";  
+//               var divid = document.getElementById('tr'+index);
+//               divid.outerHTML = "";  
               }
              function replace(){
                 var firstname=$("#fn").val()
