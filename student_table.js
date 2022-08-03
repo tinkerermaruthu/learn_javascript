@@ -42,7 +42,7 @@
             <div class="d-flex justify-content-sm-center  ">
              <input class="btn btn-outline-success" type="button" value="submit"  onclick="insertrow()">
              <input class="btn btn-outline-success" type="button" value="update" onclick="replace()">
-             
+              
              </div><br>
              
 
