@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    < <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="table.js"></script>
+    <title>Student-Table</title>
+</head>
+<body>
+<div class="container">
+    <h1>Student_table - submit,update,remove</h1>
+   <div class="row">
+       <div class="col-md-3">
+        <label>FirstName</label>
+        <input type="text" class="form-control" id="firstn">
+       </div>
+       <div class="col-md-3">
+        <label>LastName</label>
+        <input type="text" class="form-control" id="lastn">
+       </div>
+       <div class="col-md-1">
+        <label>Age</label>
+        <input type="number" class="form-control" id="age">
+       </div>
+       <div class="col-md-2">
+        <label>DateOfBirth</label>
+        <input type="text" class="form-control" id="datepicker">
+        </div>
+       <div class="col-md-3">
+        <label>ContactNumber</label>
+        <input type="text" class="form-control" id="number">
+       </div>
+     </div><br>
+     <div class="d-flex justify-content-md-center ">
+     <input class="btn btn-outline-success" type="button" value="Submit" onclick="insertRow()">&nbsp;&nbsp;
+     <input class="btn btn-outline-success" type="button" value="Update" onclick="update()">
+    </div><br>
+    <div class="bs-example">
+        <!-- Button HTML (to Trigger Modal) -->
+        
+     
+        <!-- Modal HTML -->
+        <div id="myModal" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal Title</h5>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>This is a simple Bootstrap modal. Click the "Cancel button", "cross icon" or "dark gray area" to close or hide the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div><div class="table">
+        <table  class="table" id="main">
+        <thead >
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Age</th>
+                <th>DateOfBirth</th>
+                <th>ContactNumber</th>
+                <th> </th>
+                <th> </th>
+            </tr>
+        </thead>
+    </table>
+    </div>
+</div>  
+
+
+    
+
+<script>
+    let index = 1;
+let replaceindex = 0;
+ insertRow = () => 
+{
+    index = index +1;
+    var empty ="";
+     var firstname =$("#firstn").val();
+     $('#firstn').val(empty);
+     $('#firstn').focus();
+     var lastname =$("#lastn").val();
+     $('#lastn').val(empty);
+     var age =$("#age").val();
+     $('#age').val(empty);
+     var date =$("#date").val();
+     $('#date').val(empty);
+     var number =$("#number").val();
+     $('#number').val(empty);
+     if (firstname ==''||lastname==''){
+     alert('hi')
+     }
+     else{
+        let stringBuilder = "";
+        stringBuilder += '<tr id="tr'+index+'">';
+        stringBuilder += '<td id="firstname'+index+'">'+firstname+'</td>';
+        stringBuilder += '<td id="lastname'+index+'">'+lastname+'</td>';
+        stringBuilder += '<td id="age'+index+'">'+age+'</td>';
+        stringBuilder += '<td id="date'+index+'">'+date+'</td>';
+        stringBuilder += '<td id="number'+index+'">'+number+'</td>';
+        stringBuilder += '<td><input type="button" value="edit" class="btn btn-outline-info" onclick="edit('+index+')"/></td>';
+        stringBuilder += '<td><input type="button" value="Remove"  class="btn  btn-primary" id="remove" onclick="remove('+index+')"/></td>';
+        stringBuilder += '</tr>';
+        $("#main").append(stringBuilder);
+     }
+ }
+remove = (index) => {
+    let tr = document.getElementById('tr'+index)
+    let remove = document.getElementById('remove');
+    createList(tr.value)
+    console.log('noo')
+}
+createList =(d)=>{{
+//   if (confirm("Do You want remove it!")) {
+//      $('#tr'+index).remove();
+console.log('noo')
+     let remove = document.getElementById('remove');
+    
+remove.insertAdjacentElement('beforeEnd',template)
+  } 
+ 
+}
+  $(function(){
+    $("#datepicker").datepicker({
+     dateFormat: "yy-mm-dd",
+     changeMonth: true,
+      changeYear: true
+           });
+             });
+
+ edit = (index) =>{
+    replaceindex = index;
+    var first =$("#firstname"+index).html();
+    $("#firstn").val(first);
+    var last = $("#lastname"+index).html();
+    $("#lastn").val(last);
+    var age = $("#age"+index).html();
+    $("#age").val(age);
+    var date = $("#date"+index).html();
+    $("#datepicker").val(date);
+    var number = $("#number"+index).html();
+    $("#number").val(number);
+
+
+}
+ function update(){
+    var firstname =$("#firstn").val();
+    $("#firstname"+replaceindex).html(firstname);
+    var lastname =$("#lastn").val();
+    $("#lastname"+replaceindex).html(lastname);
+    var age =$("#age").val();
+    $("#age"+replaceindex).html(age);
+    var dob =$("#datepicker").val();
+    $("#date"+replaceindex).html(dob);
+    var number=$("#number").val();
+    $("#number"+replaceindex).html(number);
+}
+
+</script>
+</body>
+</html>
