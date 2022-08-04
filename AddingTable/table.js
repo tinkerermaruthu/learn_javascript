@@ -33,7 +33,7 @@ let replaceindex = 0;
         $("#main").append(stringBuilder);
      }
  }
- function emptyField(){
+ function emptyField(){ 
    $('#staticBackdrop').modal('show');
 
  }
