@@ -46,7 +46,7 @@ let cars = [
     return x.type == 'minivan';
   }
 // console.log(cars.filter(type))
-
+ 
 cars.push({
     "color": "bule",
     "type": "minivan",
