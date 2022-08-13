@@ -33,7 +33,7 @@ let cars = [
     "color": "purple",
     "type": "minivan",
     "registration": new Date('2017-01-03'),
-    "capacity": 7
+    "capacity": 7 
   },
   {
     "color": "red",
