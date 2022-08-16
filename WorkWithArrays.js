@@ -4,7 +4,7 @@
     {name:'santhosh',ooru:'trichy'},
     {name:'san',ooru:'cbe'},
     {name:'elite',ooru:'ch'}
-  ]
+  ] 
 
 
 console.log(name[0].ooru)
