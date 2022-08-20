@@ -44,6 +44,6 @@ document.getElementById("res").innerHTML = "The factorial of the number " + i + 
 
 </script>
 
-</body>
+</body> 
 
 </html>
