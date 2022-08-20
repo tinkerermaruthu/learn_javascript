@@ -29,7 +29,7 @@ f = 1;
 num = document.getElementById("num").value;
 
 for(i = 1; i <= num; i++)  
-
+ 
 {
 
 f = f * i; 
