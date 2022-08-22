@@ -1,4 +1,4 @@
- /**
+ /** 
  * @param {string} word
  */
 function capitalize(word) {
